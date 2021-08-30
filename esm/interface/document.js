@@ -1,5 +1,3 @@
-import {performance} from 'perf_hooks';
-
 import {DOCUMENT_NODE, DOCUMENT_FRAGMENT_NODE, DOCUMENT_TYPE_NODE, ELEMENT_NODE, SVG_NAMESPACE} from '../shared/constants.js';
 
 import {
@@ -116,8 +114,6 @@ export class Document extends NonElementParentNode {
               if (!this[CUSTOM_ELEMENTS].registry)
                 this[CUSTOM_ELEMENTS] = new CustomElementRegistry(this);
               return this[CUSTOM_ELEMENTS];
-            case 'performance':
-              return performance;
             case 'DOMParser':
               return this[DOM_PARSER];
             case 'Image':
